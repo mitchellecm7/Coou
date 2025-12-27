@@ -1,0 +1,384 @@
+.upload-container {
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #fff;
+  position: relative;
+}
+
+.upload-header {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1d1615;
+}
+
+/* Logout Container */
+.icon-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 55px;
+  height: 27px;
+  border-radius: 5px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  color: #1d1615;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.picker-container {
+  position: relative;
+  border: 1px solid gray;
+  border-radius: 8px;
+  margin-top: 7px;
+  flex-shrink: 1;
+}
+
+/* Fixed Select Styling */
+.form-picker {
+  height: 50px;
+  width: 100%;
+  color: grey;
+  font-weight: 100;
+  padding: 0 40px 0 15px;
+  border: none;
+  background: transparent;
+  appearance: none;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+  /* Prevent zoom on iOS */
+  transform: translateZ(0);
+}
+
+/* Style the dropdown options */
+.form-picker option {
+  font-size: 14px;
+  color: #1d1615;
+  background: white;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* For better mobile experience */
+.form-picker:focus {
+  border-color: green;
+}
+
+.form-picker:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.picker-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1d1615;
+  font-size: 20px;
+  pointer-events: none;
+}
+
+/* Button Styles */
+.button1, .button, .delete-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+}
+
+.button1 {
+  background-color: green;
+  margin-top: 10px;
+}
+
+.button {
+  background-color: green;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+
+.delete-button:hover {
+  background-color: #cc0000;
+}
+
+
+.button1:hover, .button:hover {
+  background-color: #006400;
+}
+
+.delete-button {
+ background-color: red;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;        /* same as other buttons */
+  padding: 10px;      /* match other buttons */
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;      /* ensures text centers */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  color: #fff;   
+  z-index: 100000;}
+
+.disabled-button {
+  background-color: gray !important;
+  cursor: not-allowed !important;
+}
+
+.button-text {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+
+/* Error Styles */
+.error-text {
+  color: red;
+  font-size: 12px;
+  margin-top: 0;
+  font-style: italic;
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+}
+
+.file-selected {
+  margin-top: 5px;
+  font-size: 14px;
+  color: green;
+  font-weight: 500;
+  text-align: center;
+}
+
+.debug-info {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+/* Loading Styles */
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-spinner-small {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-spinner-large {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #0000ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #fff;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 300px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-text {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #1d1615;
+  font-weight: 600;
+  text-align: center;
+}
+
+.modal-details {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.modal-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.modal-button, .modal-button1 {
+  padding: 7px;
+  border-radius: 5px;
+  margin: 2px;
+  width: 35%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-button {
+  background-color: green;
+}
+
+.modal-button1 {
+  background-color: #ccc;
+}
+
+.modal-button-text {
+  color: #fff;
+  font-size: 16px;
+}
+
+.modal-button-text1 {
+  color: #1d1615;
+  font-size: 16px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .upload-container {
+    padding: 15px;
+  }
+  
+  .icon-container {
+    top: 15px;
+    right: 15px;
+  }
+  
+  .form-picker {
+    height: 45px;
+    font-size: 14px;
+  }
+  
+  .button1, .button, .delete-button {
+    padding: 12px;
+  }
+  
+  /* Improve dropdown on mobile */
+  .form-picker {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  .upload-container {
+    padding: 10px;
+  }
+  
+  .upload-header {
+    font-size: 18px;
+  }
+  
+  .form-label {
+    font-size: 14px;
+  }
+  
+  .form-picker {
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+/* Fix for dropdown appearance on different browsers */
+.form-picker {
+  /* Reset default styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Ensure dropdown doesn't break layout */
+.picker-container {
+  overflow: hidden;
+}
+
+/* Remove default focus styles that might cause issues */
+.form-picker:focus {
+  outline: none;
+  border: 1px solid green;
+}
+
